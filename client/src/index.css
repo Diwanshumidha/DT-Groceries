@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Tilt+Prism&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root{
+  /* Typography */
+  --step--4: clamp(0.51rem, calc(0.55rem + -0.05vw), 0.54rem);
+  --step--3: clamp(0.64rem, calc(0.66rem + -0.02vw), 0.65rem);
+  --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.80rem);
+  --step--1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1.00rem);
+  --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  --step-2: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
+  --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+  --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+  --step-5: clamp(2.80rem, calc(2.45rem + 1.77vw), 3.82rem);
+
+
+  /* Colors */
+  --primary-green:#52AF1F;
+
+
+
+  /* Font Family */
+
+}
+
+h1{
+  font-size: var(--step-5);
+}
+h2{
+  font-size: var(--step-4);
+}
+h3{
+  font-size: var(--step-3);
+}
+
+h4{
+  font-size: var(--step-2);
+}
+
+h5 {
+  font-size: var(--step-1);
+}
+
+h6{
+  font-size: var(--step-0);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+  
+}
+
+li{
+  text-decoration: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img,video{
+  max-width: 100%;
+  height: auto;
+
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  font-family: 'Jost', sans-serif;
+}
+
+
+@layer utilities {
+  .text-step-0 {
+    font-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  }
+  
+  .text-step-1 {
+    font-size: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  }
+  
+  .text-step-2 {
+    font-size: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
+  }
+  
+  .text-step-3 {
+    font-size: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+  }
+  
+  .text-step-4 {
+    font-size: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+  }
+  
+  .text-step-5 {
+    font-size: clamp(2.80rem, calc(2.45rem + 1.77vw), 3.82rem);
+  }
+  .text-step--1{
+    font-size: clamp(0.94rem, calc(0.92rem + 0.11vw), 1.00rem);
+  }
+}
