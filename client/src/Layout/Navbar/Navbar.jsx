@@ -23,9 +23,9 @@ const Navbar = () => {
 
   return (
     <motion.section 
-          className={`w-full h-[80px] fixed z-30 Navbar ${!isscrolled?" bg-primary-green":""} `}
-          initial={{ opacity: 0, y:'-100px' }}
-          animate={{ opacity: 1, y:'0px' }}
+          className={`w-full h-[80px] fixed z-30 Navbar  `}
+          // initial={{ opacity: 0, y:'-100px',backgroundColor:'transparent'}}
+          animate={{ opacity: [0,1], y:['-100px','0px']}}
           transition={{ duration: 0.5 }}>
       <div className=" container px-4 justify-between lg:px-4   flex items-center  mx-auto  h-full">
         <div className=" flex gap-5 md:gap-7 lg:gap-9">
