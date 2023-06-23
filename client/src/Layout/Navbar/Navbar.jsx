@@ -3,12 +3,20 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { motion } from "framer-motion"
+import { NavLink } from 'react-router-dom';
+import { CartContext } from '../../Contexts/CartI';
 
-const Navbar = () => {
 
-  
+const Navbar = ({bgcolor='white', logocolor='green', linkscolor='black'}) => {
+  const { open, setOpen } = useContext(CartContext);
+
+  const handleCartClick = () => {
+    console.log(open)
+    setOpen(!open);
+  };
+
   const [isscrolled, setisscrolled] = useState(true);
 
   const changeColor = () => {
@@ -22,34 +30,40 @@ const Navbar = () => {
   window.addEventListener("scroll", changeColor, true);
 
   return (
+    <>
+
     <motion.section 
-          className={`w-full h-[80px] fixed z-30 Navbar  `}
-          // initial={{ opacity: 0, y:'-100px',backgroundColor:'transparent'}}
+          className={`w-full h-[80px] fixed top-0 left-0 z-30 Navbar ${`bg-${bgcolor}`}   ${!isscrolled?" bg-primary-green shadow-lg":""}`}
           animate={{ opacity: [0,1], y:['-100px','0px']}}
           transition={{ duration: 0.5 }}>
       <div className=" container px-4 justify-between lg:px-4   flex items-center  mx-auto  h-full">
         <div className=" flex gap-5 md:gap-7 lg:gap-9">
-          <h4 className={`  font-bold ${isscrolled?"text-primary-green":" text-white"}`}>DT:Grocery</h4>
-          <ul className={` gap-3 items-center hidden md:flex ${!isscrolled?"text-black":" text-white"}`}>
+          <h4 className={`  font-bold  ${`text-${logocolor}`}`}>DT:Grocery</h4>
+          <ul className={` gap-3 items-center hidden md:flex ${`text-${linkscolor}`}`}>
             <li>
-              <a href="">Home</a>
+              <NavLink to={"/"} >Home</NavLink>
             </li>
             <li>
-              <a href="">Shop</a>
+              <NavLink to="">Shop</NavLink>
             </li>
             <li>
-              <a href="">Contact Us</a>
+              <NavLink to="/contact">Contact Us</NavLink>
             </li>
             <li>
-              <a href="">About Us</a>
+              <NavLink to="/about">About Us</NavLink>
+            </li>
+            <li>
+              <NavLink to="/faq">FAQ</NavLink>
             </li>
           </ul>
         </div>
-        <div className= {`hidden md:flex gap-2 ${!isscrolled?"text-black":" text-white"}`}>
-          <a href=""><SearchIcon/></a>
+        
+        <div className= {`hidden md:flex gap-2  ${`text-${linkscolor}`}`}>
+         
+          <a href=""><SearchIcon/></a> 
           <a href=""><PersonOutlineIcon/></a>
           <a href=""><FavoriteBorderIcon/></a>
-          <a href=""><LocalMallIcon/></a>
+          <a onClick={()=>{handleCartClick()}}><LocalMallIcon/></a>
         </div>
         <div className=' block md:hidden'>
             <a>
@@ -57,7 +71,28 @@ const Navbar = () => {
             </a>
         </div>
       </div>
+      <div className=' absolute flex w-full bg-white hidden'>
+    <ul className={` gap-3 items-center hidden md:flex flex-col text-black`}>
+            <li>
+              <NavLink to={"/"} >Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="">Shop</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Contact Us</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About Us</NavLink>
+            </li>
+            <li>
+              <NavLink to="/faq">FAQ</NavLink>
+            </li>
+          </ul>
+    </div>
     </motion.section>
+   
+    </>
   );
 };
 

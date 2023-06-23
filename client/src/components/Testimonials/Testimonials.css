@@ -1,0 +1,29 @@
+.rating_logo input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .rating_logo{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .rating_logo svg {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    transition: all 0.3s;
+    fill: var(--primary-green);
+  }
+  
+  .rating_logo svg:hover {
+    transform: scale(1.1);
+  }
+  
