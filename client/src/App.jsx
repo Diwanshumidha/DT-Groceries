@@ -1,7 +1,5 @@
 import Footer from "./Layout/Footer/Footer";
 
-
-import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx/Home";
 import Faq from "./pages/FAQ/Faq";
 import Contact_us from "./components/Contact_us/Contact_us";
