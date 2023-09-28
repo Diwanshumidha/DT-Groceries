@@ -14,7 +14,6 @@ In the project directory, you can run the following scripts:
 
 npm run dev: Start the development server.
 npm run build: Build the project for production.
-npm run serve: Serve the production build locally.
 Contributing
 Feel free to contribute to this project by opening issues or submitting pull requests. We welcome your feedback and contributions!
 
